@@ -5,8 +5,33 @@
 
       // Esta funcao converte mm para pol milesimal
       function converter() {
-        var resultado = milimetro / 25.4;
-        console.log(resultado);
+        console.log("Valor inserido: " + milimetro);
+        var resultado = (milimetro / 25.4) * 128;
+        // console.log("Resultado: " + resultado);
+        // console.log("Resultado Round:" + Math.round(resultado));
+        
+        console.log("Calcula em polegadas");
+        let maxDivisor = maxCommonDivisor_two_numbers(resultado, 128);
+        // console.log("Max divisor: " + maxDivisor);
+
+        const numerador = Math.round(resultado) / maxDivisor;
+        const denominador = 128 / maxDivisor;
+
+        console.log("Resultado: " + numerador + "/" + denominador + '"');
+      }
+
+      function maxCommonDivisor_two_numbers(x, y) {
+        if ((typeof x !== 'number') || (typeof y !== 'number')) 
+          return false;
+        x = Math.round(x);
+        y = Math.abs(y);
+        
+        while(y) {
+          var t = y;
+          y = x % y;
+          x = t;
+        }
+        return x;
       }
 
       converter();
