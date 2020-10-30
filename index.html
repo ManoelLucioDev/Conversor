@@ -7,12 +7,12 @@
       function converter() {
         console.log("Valor inserido: " + milimetro);
         var resultado = (milimetro / 25.4) * 128;
-        console.log("Resultado: " + resultado);
-        console.log("Resultado Round:" + Math.round(resultado));
+        // console.log("Resultado: " + resultado);
+        // console.log("Resultado Round:" + Math.round(resultado));
         
         console.log("Calcula em polegadas");
         let maxDivisor = maxCommonDivisor_two_numbers(resultado, 128);
-        console.log("Max divisor: " + maxDivisor);
+        // console.log("Max divisor: " + maxDivisor);
 
         const numerador = Math.round(resultado) / maxDivisor;
         const denominador = 128 / maxDivisor;
